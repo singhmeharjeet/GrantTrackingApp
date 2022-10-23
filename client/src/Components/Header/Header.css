@@ -1,0 +1,33 @@
+.header {
+	background-color: #333;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	gap: 2rem;
+	padding: 0 1rem;
+}
+.site-title {
+	font-size: 2rem;
+}
+.header ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	display: flex;
+	gap: 5rem;
+}
+.header a {
+	color: inherit;
+	text-decoration: none;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	padding: 0.25rem;
+}
+.header li:hover {
+	background-color: #777;
+}
+.header li.active {
+	background-color: #555;
+}
