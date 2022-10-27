@@ -1,0 +1,9 @@
+input {
+  padding: 20px;
+  margin: 5px 0px;
+}
+.viewoption #label {
+  display: inline-block;
+  width: 200px;
+  padding: 20px;
+}

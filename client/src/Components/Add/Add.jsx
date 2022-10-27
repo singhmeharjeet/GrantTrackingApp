@@ -15,6 +15,7 @@ function Add() {
 			<FormInput placeholder="FAST Track Balance" />
 			<FormInput placeholder="Grant Start Funding" />
 			<FormInput placeholder="Grant End Funding" />
+			<button class="button">Submit</button>
 		</div>
 	);
 }
