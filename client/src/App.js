@@ -1,6 +1,6 @@
 import Header from "./Components/Header/Header";
 import { Route, Routes } from "react-router-dom";
-import Add from "./Components/Add/Add.js";
+import Add from "./Components/Add/Add";
 import ViewOption from "./Components/View/ViewOption";
 import DeleteOption from "./Components/Delete/DeleteOption";
 import UpdateOption from "./Components/Update/UpdateOption";
