@@ -1,11 +1,21 @@
 import Header from "./Components/Header/Header";
+import { Route, Routes } from "react-router-dom";
 import Add from "./Components/Add/Add.js";
+import ViewOption from "./Components/View/ViewOption";
+import DeleteOption from "./Components/Delete/DeleteOption";
+import UpdateOption from "./Components/Update/UpdateOption";
 function App() {
   return (
     <div className="App">
       <Header />
-      <Add />
-      <div className="container"></div>
+      <div className="container">
+        <Routes>
+          <Route path="/add" element={<Add />} />
+          <Route path="/view" element={<ViewOption />} />
+          <Route path="/delete" element={<DeleteOption />} />
+          <Route path="/update" element={<UpdateOption />} />
+        </Routes>
+      </div>
     </div>
   );
 }
