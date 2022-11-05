@@ -1,0 +1,40 @@
+.react-datepicker-wrapper,
+.react-datepicker__input-container,
+.react-datepicker-ignore-onclickoutside {
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+.react-datepicker__input-container input {
+	width: 100%;
+	height: 3em;
+	display: flex;
+	align-items: center;
+	background: none;
+	flex-grow: 1;
+	border: none;
+	color: rgb(36, 36, 36);
+	font-size: 14px;
+	outline: none;
+	transition: all 0.3ms ease-in-out;
+}
+
+.date {
+	display: flex;
+	flex-direction: row;
+	width: 50%;
+	gap: 1em;
+}
+.date-span {
+	border-bottom: 2px solid rgb(154, 154, 154);
+}
+.date-wrapper {
+	display: flex;
+	flex-grow: 1;
+	justify-content: space-between;
+	align-items: center;
+}
+.date-wrapper > label {
+	font-size: large;
+	font-weight: bold;
+}

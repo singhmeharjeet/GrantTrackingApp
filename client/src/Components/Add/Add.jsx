@@ -1,21 +1,24 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./Add.css";
-import FormInput from "../FormInput/FormInput";
+import TextInput from "../TextInput/TextInput";
+import DateInput from "../DateInput/DateInput";
 function Add() {
-	// const [state, setState] = useState({
-	// 	formid, startDate, endDate
-	// });
 	return (
-		<div className="add">
-			{/* <FormInput placeholder="FormID" onClick={(e) => { setState.formid = e.target.value }} /> */}
-			<FormInput placeholder="Appointment Start Date" />
-			<FormInput placeholder="Appointment End Date" />
-			<FormInput placeholder="Appointment Amount" />
-			<FormInput placeholder="Funding Source" />
-			<FormInput placeholder="FAST Track Balance" />
-			<FormInput placeholder="Grant Start Funding" />
-			<FormInput placeholder="Grant End Funding" />
-			<button class="button">Submit</button>
+		<div className="add-wrapper">
+			<div className="add-content">
+				<TextInput placeholder="Form ID" />
+				<div className="add-date-style">
+					<DateInput />
+				</div>
+				<TextInput placeholder="Appointment Amount" />
+				<TextInput placeholder="Funding Source" />
+				<TextInput placeholder="FAST Track Balance" />
+				<TextInput placeholder="Grant Start Funding" />
+				<TextInput placeholder="Grant End Funding" />
+				<div className="add-submit-button-wrapper">
+					<button class="add-submit-button">Submit</button>
+				</div>
+			</div>
 		</div>
 	);
 }
