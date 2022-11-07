@@ -53,7 +53,6 @@
 .header-options > span:hover,
 .header-options > span:active {
 	background-color: #777;
-	color: black;
 }
 .header a {
 	text-decoration: none;

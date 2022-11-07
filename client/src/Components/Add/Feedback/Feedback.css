@@ -1,0 +1,49 @@
+.form-check-row-wrapper {
+	gap: 5%;
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+	border-radius: 10px;
+	width: 100%;
+	overflow: hidden;
+	transition: maxHeight 1s ease-in-out;
+}
+
+.form-check-row {
+	height: 3em;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.form-check-icon {
+	height: 100%;
+	aspect-ratio: 1/1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.form-check-title {
+	font-size: small;
+	font-family: "Helvetica Neue";
+	height: 100%;
+	flex-basis: 90%;
+	flex-wrap: nowrap;
+	display: flex;
+	align-items: center;
+}
+
+.form-check-description {
+	width: 100%;
+}
+.form-check-description > p {
+	font-size: small;
+	padding: 0.8em;
+}
+.valid {
+	border-bottom: 2px solid green;
+}
+.unvalid {
+	border-bottom: 2px solid red;
+}

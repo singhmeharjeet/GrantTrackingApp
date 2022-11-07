@@ -28,6 +28,9 @@
 .date-span {
 	border-bottom: 2px solid rgb(154, 154, 154);
 }
+.date-span:has(:focus) {
+	border-bottom: 2px solid #333;
+}
 .date-wrapper {
 	display: flex;
 	flex-grow: 1;
