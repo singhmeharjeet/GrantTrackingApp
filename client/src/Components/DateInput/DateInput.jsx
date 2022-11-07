@@ -24,6 +24,7 @@ export default function DateInput(props) {
 						style={{ borderBottom: `2px solid ${color}` }}
 					>
 						<DatePicker
+							dateFormat="MMMM d, yyyy"
 							selected={startDate}
 							selectsStart
 							startDate={startDate}
@@ -36,6 +37,7 @@ export default function DateInput(props) {
 						style={{ borderBottom: `2px solid ${color}` }}
 					>
 						<DatePicker
+							dateFormat="MMMM d, yyyy"
 							selected={endDate}
 							selectsEnd
 							startDate={startDate}
