@@ -30,6 +30,7 @@ function Add() {
 		}
 	};
 
+	useEffect(() => console.log('errors', errors), [errors.length]);
 	return (
 		<div className="add-wrapper">
 			<div className="add-content">

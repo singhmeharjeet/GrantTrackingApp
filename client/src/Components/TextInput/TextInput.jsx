@@ -1,37 +1,38 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./TextInput.css";
-
-function useDidUpdateEffect(fn, inputs) {
-	const didMountRef = useRef(false);
-
-	useEffect(() => {
-		if (didMountRef.current) {
-			return fn();
-		}
-		didMountRef.current = true;
-	}, inputs);
-}
+import { useDidUpdateEffect } from "../../Hooks/useDidUpdateEffect";
 
 function TextInput(props) {
 	const name = props.name;
 	const [value, setValue] = useState("");
+	const [color, setColor] = useState("rgb(154, 154, 154)");
 
 	const isNumeric = (n) => !isNaN(parseFloat(n)) && isFinite(n);
 
 	function validateValue(value) {
-		console.log("validate triggered from" + props.placeholder);
 		switch (name) {
 			case "formid":
-			case "fundingSource":{
-				if (!value) 
+			case "fundingSource": {
+				if (!value || value.trim().length < 3) {
 					props.onError({
 						name,
 						resolved: false,
 						status: false,
-						title: "Empty Field",
-						message: `Please enter a valid ${name}`,
+						title: "Invalid Input",
+						message: `Please enter a valid ${name} above 3 characters`,
 					});
+					setColor("red");
+				} else if (value.trim().length >= 3) {
+					props.onError({
+						name,
+						resolved: true,
+						status: true,
+						title: "Valid Input",
+						message: `You entered a valid ${name} above 3 characters`,
+					});
+					setColor("green");
+				}
 				break;
 			}
 			case "appointmentAmount":
@@ -46,6 +47,7 @@ function TextInput(props) {
 						title: "Negative value",
 						message: `${name} is always a positive number`,
 					});
+					setColor("red");
 				} else if (value >= 0 && isNumeric(value)) {
 					props.onError({
 						name,
@@ -54,6 +56,7 @@ function TextInput(props) {
 						title: "Positive Value",
 						message: `${name} is always a positive number`,
 					});
+					setColor("green");
 				} else if (value === "") {
 					props.onError({
 						name,
@@ -62,11 +65,12 @@ function TextInput(props) {
 						title: "Empty Input Field",
 						message: `${name} is always a positive number`,
 					});
+					setColor("red");
 				}
 				break;
 			}
 			default: {
-				return;
+				setColor("green");
 			}
 		}
 	}
@@ -84,16 +88,19 @@ function TextInput(props) {
 					if (props.type.localeCompare("number") === 0) {
 						if (isNumeric(event.target.value)) {
 							setValue(event.target.value);
-						} else if (event.target.value === "" || event.target.value === "-") {
+						} else if (
+							event.target.value === "" ||
+							event.target.value === "-"
+						) {
 							setValue("");
 						} else return;
 					}
 					setValue(event.target.value);
 				}}
 				className="form-input"
+				style={{ borderBottom: `2px solid ${color}` }}
 				type="text"
 				placeholder={props.placeholder}
-				step={props.step ? props.step : 500}
 				name={props.name}
 				value={value}
 			/>

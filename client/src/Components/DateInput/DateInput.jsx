@@ -7,8 +7,9 @@ import "./DateInput.css";
 export default function DateInput(props) {
 	const [startDate, setStartDate] = useState(new Date());
 	const [endDate, setEndDate] = useState(new Date());
-
+	const [color, setColor] = useState("rgb(154, 154, 154");
 	useEffect(() => {
+		startDate <= endDate ? setColor("green") : setColor("red");
 		props.onChange("startDate", startDate);
 		props.onChange("endDate", endDate);
 	}, [startDate, endDate]);
@@ -18,7 +19,10 @@ export default function DateInput(props) {
 			<div className="date-wrapper">
 				<label>Application Period [From - To]</label>
 				<div className="date">
-					<span className="date-span">
+					<span
+						className="date-span"
+						style={{ borderBottom: `2px solid ${color}` }}
+					>
 						<DatePicker
 							selected={startDate}
 							selectsStart
@@ -27,7 +31,10 @@ export default function DateInput(props) {
 							onChange={(date) => setStartDate(date)}
 						/>
 					</span>
-					<span className="date-span">
+					<span
+						className="date-span"
+						style={{ borderBottom: `2px solid ${color}` }}
+					>
 						<DatePicker
 							selected={endDate}
 							selectsEnd
