@@ -22,6 +22,18 @@ function TextInput(props) {
 	function validateValue(value) {
 		console.log("validate triggered from" + props.placeholder);
 		switch (name) {
+			case "formid":
+			case "fundingSource":{
+				if (!value) 
+					props.onError({
+						name,
+						resolved: false,
+						status: false,
+						title: "Empty Field",
+						message: `Please enter a valid ${name}`,
+					});
+				break;
+			}
 			case "appointmentAmount":
 			case "fastTrackBalance":
 			case "grantStartFunding":
@@ -62,7 +74,6 @@ function TextInput(props) {
 	useDidUpdateEffect(() => {
 		validateValue(value);
 		props.onChange(name, value);
-		console.log("value", value);
 	}, [value]);
 
 	return (
@@ -70,8 +81,6 @@ function TextInput(props) {
 			<label className="input-label">{props.placeholder}</label>
 			<input
 				onChange={(event) => {
-					console.log("onChange triggered from" + props.placeholder);
-					console.log("event.target.value", event.target.value);
 					if (props.type.localeCompare("number") === 0) {
 						if (isNumeric(event.target.value)) {
 							setValue(event.target.value);

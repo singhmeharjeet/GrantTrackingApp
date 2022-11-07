@@ -4,7 +4,7 @@
 	border-radius: 10px;
 	width: 100%;
 	overflow: hidden;
-	transition: maxHeight 1s ease-in-out;
+	
 }
 
 .form-check-row {
@@ -36,6 +36,7 @@
 
 .form-check-description {
 	width: 100%;
+	transition: max-height 0.5s ease-in-out;
 }
 .form-check-description > p {
 	font-size: small;

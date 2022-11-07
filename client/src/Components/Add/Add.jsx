@@ -17,9 +17,7 @@ function Add() {
 
 		errors.forEach((error) => {
 			if (error.name.localeCompare(e.name) === 0) {
-				if (e.resolved == false) {
-					arr.push(error);
-				}
+				if (e.resolved == false) arr.push(error);
 				errorFound = true;
 			} else {
 				arr.push(error);
@@ -31,10 +29,6 @@ function Add() {
 			if (e.resolved === false) setErrors([...errors, e]);
 		}
 	};
-
-	useEffect(() => {
-		console.log("errors", errors);
-	}, [errors.length]);
 
 	return (
 		<div className="add-wrapper">

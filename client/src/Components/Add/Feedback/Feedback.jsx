@@ -11,15 +11,10 @@ function Feedback({ valid, title, children }) {
 	const contentRef = useRef(null);
 
 	function handleCollaps() {
-		console.log("isCollapsed", isCollapsed);
 		setIsCollapsed(!isCollapsed);
 		isCollapsed
 			? setMaxHeight(0)
 			: setMaxHeight(contentRef.current.scrollHeight);
-		console.log(
-			"contentRef.current.scrollHeight",
-			contentRef.current.scrollHeight
-		);
 	}
 
 	return (
