@@ -10,8 +10,8 @@ export default function DateInput(props) {
 	const [color, setColor] = useState("rgb(154, 154, 154");
 	useEffect(() => {
 		startDate <= endDate ? setColor("green") : setColor("red");
-		props.onChange("startDate", startDate);
-		props.onChange("endDate", endDate);
+		props.onChange("startDate", startDate.toISOString());
+		props.onChange("endDate", endDate.toISOString());
 	}, [startDate, endDate]);
 
 	return (

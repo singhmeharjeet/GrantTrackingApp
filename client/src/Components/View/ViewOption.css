@@ -1,6 +1,16 @@
-
-.viewoption #label {
-  display: inline-block;
-  width: 200px;
-  padding: 20px;
+.viewoption {
+	width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.view-search-wrapper {
+  display: flex;
+  gap: 2em;
+  margin: 2em;
+}
+.table-wrapper {
+	width: 100vw;
+	display: flex;
+  justify-content: center;
 }

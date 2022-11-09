@@ -36,6 +36,10 @@
 	flex-grow: 1;
 	justify-content: space-between;
 	align-items: center;
+	transition: all 0.3s ease-in-out;
+}
+.date-wrapper:hover {
+	transform: scale(1.03);
 }
 .date-wrapper > label {
 	font-size: large;

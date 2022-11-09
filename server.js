@@ -3,6 +3,8 @@ const express = require("express");
 const path = require("path");
 const authorize = require("./routers/login.js");
 const home = require("./routers/home.js");
+const allData = require("./routers/allData.js");
+const addPost = require("./routers/add.js");
 /* 
 	Setup Server app
 */
@@ -26,12 +28,14 @@ app.use("/", home);
 // 	res.send({ Message: "Server is running" });
 // });
 app.use("/login", authorize);
+app.use("/allData", allData);
+app.use("/add", addPost);
 
 /* 
 	Default Action
 */
-app.get("*", (req, res) => {
-	res.sendFile(path.resolve(__dirname, "public", "build", "index.html"));
-});
+// app.get("*", (req, res) => {
+// 	res.sendFile(path.resolve(__dirname, "public", "build", "index.html"));
+// });
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
