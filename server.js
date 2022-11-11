@@ -5,6 +5,7 @@ const authorize = require("./routers/login.js");
 const home = require("./routers/home.js");
 const allData = require("./routers/allData.js");
 const addPost = require("./routers/add.js");
+
 /* 
 	Setup Server app
 */

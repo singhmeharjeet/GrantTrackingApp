@@ -2,7 +2,8 @@ import Header from "./Components/Header/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Add from "./Components/Add/Add";
-import ViewOption from "./Components/View/ViewOption";
+import Home from "./Components/Home/Home";
+import View from "./Components/View/View";
 import DeleteOption from "./Components/Delete/DeleteOption";
 import UpdateOption from "./Components/Update/UpdateOption";
 
@@ -15,7 +16,8 @@ export default function App() {
 					<Header />
 					<Routes>
 						<Route path="/add" element={<Add />} />
-						<Route path="/view" element={<ViewOption />} />
+						<Route path="/home" element={<Home />} />
+						<Route path="/view" element={<View />} />
 						<Route path="/delete" element={<DeleteOption />} />
 						<Route path="/update" element={<UpdateOption />} />
 					</Routes>

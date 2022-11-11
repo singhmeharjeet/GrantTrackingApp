@@ -32,21 +32,22 @@ const columns = [
 		label: "Funding Source",
 		minWidth: 100,
 		align: "right",
-		format: (value) => value.toLocaleString("en-US"),
 	},
 	{
 		id: "appointmentamount",
 		label: "Appointment Amount",
 		minWidth: 100,
 		align: "right",
-		format: (value) => value.toFixed(2),
+		format: (value) =>
+			value.toLocaleString("en-US", { minimumFractionDigits: 2 }),
 	},
 	{
 		id: "fasttrackbalance",
 		label: "FAST Track Balance",
 		minWidth: 100,
 		align: "right",
-		format: (value) => value.toFixed(2),
+		format: (value) =>
+			value.toLocaleString("en-US", { minimumFractionDigits: 2 }),
 	},
 
 	{
@@ -54,14 +55,16 @@ const columns = [
 		label: "Grant Start Funding",
 		minWidth: 100,
 		align: "right",
-		format: (value) => value.toFixed(2),
+		format: (value) =>
+			value.toLocaleString("en-US", { minimumFractionDigits: 2 }),
 	},
 	{
 		id: "grantendfunding",
 		label: "Grant End Funding",
 		minWidth: 100,
 		align: "right",
-		format: (value) => value.toFixed(2),
+		format: (value) =>
+			value.toLocaleString("en-US", { minimumFractionDigits: 2 }),
 	},
 ];
 
@@ -81,12 +84,13 @@ export default function DataTable({ rows }) {
 	return (
 		<Paper
 			sx={{
-				width: "90%",
+				width: "93%",
+				maxHeight: "100%",
 				boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
 				borderRadius: "0.5em",
 			}}
 		>
-			<TableContainer sx={{ maxHeight: 440 }}>
+			<TableContainer sx={{ maxHeight: 490 }}>
 				<Table stickyHeader aria-label="sticky table">
 					<TableHead>
 						<TableRow key={uuidv4()}>

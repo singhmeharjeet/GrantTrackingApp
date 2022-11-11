@@ -5,7 +5,7 @@ function Header() {
 	return (
 		<div className="header">
 			<div id="header-logo">
-				<Link to="/" className="site-title">
+				<Link to="/home" className="site-title">
 					Tracker
 				</Link>
 			</div>

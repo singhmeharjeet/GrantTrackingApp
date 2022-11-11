@@ -5,7 +5,7 @@ import TextField from "@mui/material/TextField";
 import DataTable from "../Table/Table";
 import { useGlobalData } from "../../Contexts/Global/GlobalContext";
 
-import "./ViewOption.css";
+import "./Home.css";
 function FullWidthTextField({ inputProps }) {
 	return (
 		<Box
@@ -23,8 +23,8 @@ function FullWidthTextField({ inputProps }) {
 		</Box>
 	);
 }
-function ViewOption() {
-  const { allPosts } = useGlobalData();
+function Home() {
+	const { allPosts } = useGlobalData();
 	const [search, setSearch] = useState("");
 
 	// useEffect(() => {
@@ -41,16 +41,16 @@ function ViewOption() {
 						}}
 					/>
 				</div>
-			</div>
-			<div className="table-wrapper">
-				<DataTable
-					rows={allPosts.filter((post) =>
-						post.formid.includes(search)
-					)}
-				/>
+				<div className="table-wrapper">
+					<DataTable
+						rows={allPosts.filter((post) =>
+							post.formid.includes(search)
+						)}
+					/>
+				</div>
 			</div>
 		</>
 	);
 }
 
-export default ViewOption;
+export default Home;

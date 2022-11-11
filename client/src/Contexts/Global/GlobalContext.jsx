@@ -117,6 +117,8 @@ const GlobalContextProvider = ({ children }) => {
 		return response;
 	}
 
+	function update() { }
+	
 	useEffect(() => {
 		insertAllData();
 	}, [changeCounter]);
@@ -127,6 +129,7 @@ const GlobalContextProvider = ({ children }) => {
 				insertAllData,
 				allPosts: state.allPosts,
 				addRequest: add,
+				updateRequest: update
 			}}
 		>
 			{children}

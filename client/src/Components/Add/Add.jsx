@@ -1,15 +1,32 @@
+// React Components
 import React, { useState, useEffect } from "react";
+
+// Css
 import "./Add.css";
+import { RiSendPlaneFill } from "react-icons/ri";
+
+// Custom components
 import TextInput from "../TextInput/TextInput";
 import DateInput from "../DateInput/DateInput";
 import Feedback from "./Feedback/Feedback";
+
+// Global Data
 import { useGlobalData } from "../../Contexts/Global/GlobalContext";
-import { RiSendPlaneFill } from "react-icons/ri";
+
+/**
+ * inputs = {
+ * 	formid: ..,
+ * 	start: ..,
+ * 	end: ..,
+ * }
+ */
 function Add() {
 	const [inputs, setInputs] = useState({});
 	const [errors, setErrors] = useState([]);
 	const { addRequest } = useGlobalData();
 	const [dbResponse, setDbResponse] = useState({});
+
+
 	const handleChange = (n, v) => {
 		setInputs((inputs) => ({ ...inputs, [n]: v }));
 	};
